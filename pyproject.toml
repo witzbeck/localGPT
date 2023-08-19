@@ -34,6 +34,8 @@ huggingface-hub = "^0.16.4"
 faiss-cpu = "^1.7.4"
 transformers = "^4.31.0"
 llama-cpp-python = "^0.1.78"
+cython = "^3.0.0"
+numpy = "^1.25.2"
 
 
 [build-system]
