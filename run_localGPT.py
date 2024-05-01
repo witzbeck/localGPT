@@ -280,6 +280,6 @@ def main(device_type, show_sources, use_history, model_type, save_qa):
 
 if __name__ == "__main__":
     logging.basicConfig(
-        format="%(asctime)s - %(levelname)s - %(filename)s:%(lineno)s - %(message)s", level=logging.INFO
+        format=LOG_FORMAT, level=logging.INFO
     )
     main()

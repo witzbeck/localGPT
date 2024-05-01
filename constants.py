@@ -1,4 +1,5 @@
 import os
+from pathlib import Path
 
 # from dotenv import load_dotenv
 from chromadb.config import Settings
@@ -9,15 +10,18 @@ from langchain.document_loaders import UnstructuredFileLoader, UnstructuredMarkd
 from langchain.document_loaders import UnstructuredHTMLLoader
 
 
+LOG_FORMAT = "%(asctime)s - %(levelname)s - %(filename)s:%(lineno)s - %(message)s"
+
+
 # load_dotenv()
-ROOT_DIRECTORY = os.path.dirname(os.path.realpath(__file__))
+ROOT_DIRECTORY = Path(__file__).parent
 
 # Define the folder for storing database
-SOURCE_DIRECTORY = f"{ROOT_DIRECTORY}/SOURCE_DOCUMENTS"
+SOURCE_DIRECTORY = ROOT_DIRECTORY / "SOURCE_DOCUMENTS"
 
-PERSIST_DIRECTORY = f"{ROOT_DIRECTORY}/DB"
+PERSIST_DIRECTORY = ROOT_DIRECTORY / "DB"
 
-MODELS_PATH = "./models"
+MODELS_PATH = ROOT_DIRECTORY / "models"
 
 # Can be changed to a specific number
 INGEST_THREADS = os.cpu_count() or 8
